@@ -12,23 +12,32 @@ You are researching the topic: **$ARGUMENTS**
 
 ### 1. Plan the research
 
-Break the topic into 3-5 research angles. Typical angles include:
-- Official documentation and core concepts
-- Practical usage, getting started, best practices
-- Community opinions, gotchas, real-world experience (Reddit, HN, forums)
-- Comparisons with alternatives
-- Advanced patterns and edge cases
-
-Write the plan briefly, then proceed.
+Briefly state the topic and any specific sub-questions, then proceed to dispatch researchers covering all required angles (see below).
 
 ### 2. Dispatch researchers in parallel
 
-Launch 3-5 researcher agents simultaneously, each covering a different angle. Each agent should:
+Launch 5-8 researcher agents simultaneously. Each agent should:
 - Search the web for their specific angle
 - Follow promising leads to get depth
 - Return structured notes with source URLs
 
 Use `subagent_type: "researcher"` and `run_in_background: true` for all agents.
+
+#### Required research angles
+
+Every topic must be researched from **all** of these angles (adapt the specific queries to the topic):
+
+| # | Angle | What to search for |
+|---|---|---|
+| 1 | **Official sources** | Official documentation, project websites, specs, RFCs. The authoritative "how it works" material. |
+| 2 | **Practical usage** | Getting started guides, tutorials, best practices, common patterns, code examples. |
+| 3 | **Community experience** | Reddit (r/programming, topic-specific subs), Hacker News, developer forums. Real opinions, success/failure stories, gotchas. |
+| 4 | **Industry analysis** | Thoughtworks Technology Radar, Gartner, InfoQ, ThoughtWorks blog, Martin Fowler's site, major tech company engineering blogs. What do industry voices say about maturity, adoption, direction of travel? |
+| 5 | **Authoritative guides** | Seminal blog posts, official guides from major vendors (Anthropic, Google, Microsoft, etc.), influential articles that shaped how people think about this topic. |
+| 6 | **Academic research** | arXiv papers, survey papers, Google Scholar results. Taxonomies, benchmarks, research findings. Especially useful for establishing rigorous definitions and classifications. |
+| 7 | **Future direction** | Where is this heading? What are the open problems? What are major companies investing in? Conference talks, roadmaps, predictions from credible sources. |
+
+Not every angle will be equally relevant to every topic — some topics are more academic, others more practical. But the researcher for each angle should still try and report back what they found (even if it's "not much academic work on this yet").
 
 ### 3. Synthesise into MkDocs pages
 

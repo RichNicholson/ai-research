@@ -4,4 +4,4 @@ Deep-dive research summaries on various topics. Each section covers a topic rese
 
 ## Topics
 
-*No topics researched yet. Ask Claude to research a topic to get started.*
+- **[Multi-Agent AI Systems](multi-agent-ai/index.md)** --- Frameworks (LangGraph, CrewAI, AutoGen, Claude Code), protocols (A2A, MCP), coordination patterns, community opinions, and practical guidance for when multi-agent actually helps vs. when a single prompt will do.

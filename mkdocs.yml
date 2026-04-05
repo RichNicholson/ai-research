@@ -48,3 +48,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Multi-Agent AI:
+    - Overview: multi-agent-ai/index.md
+    - Practical Guide: multi-agent-ai/guide.md
+    - Community Insights: multi-agent-ai/community.md
+    - Sources: multi-agent-ai/sources.md
