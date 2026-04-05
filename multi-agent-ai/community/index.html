@@ -1,0 +1,1238 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deep-dive research summaries on various topics">
+      
+      
+      
+      
+        <link rel="prev" href="../guide/">
+      
+      
+        <link rel="next" href="../sources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Community Insights - AI Research Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#community-insights-on-multi-agent-ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Research Notes" class="md-header__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Community Insights
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Research Notes" class="md-nav__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Research Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Agent AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multi-Agent AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Insights
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Insights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-hype-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hype Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-success-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Success Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Success Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-13-agent-prediction-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 13-Agent Prediction Market
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-simulated-trading-desk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Simulated Trading Desk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-multi-stage-development-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Multi-Stage Development Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sqlite-shard-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SQLite Shard Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-frustrations-and-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Frustrations and Failure Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Frustrations and Failure Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-coordination-is-the-hardest-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Coordination Is the Hardest Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus-is-a-bad-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus Is a Bad Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subagent-quality-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subagent Quality Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-47-infinite-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The $47 Infinite Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sick-of-frameworks-camp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Sick of Frameworks" Camp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-kubernetes-for-agents-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Kubernetes for Agents Angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-just-use-a-single-prompt-debate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Just Use a Single Prompt" Debate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-tips-from-practitioners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Tips from Practitioners
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Tips from Practitioners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-surprises-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Surprises People
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-polythink-debate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PolyThink Debate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-and-governance-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety and Governance Concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bottom Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-hype-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hype Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-success-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Success Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Success Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-13-agent-prediction-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 13-Agent Prediction Market
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-simulated-trading-desk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Simulated Trading Desk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-multi-stage-development-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Multi-Stage Development Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sqlite-shard-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SQLite Shard Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-frustrations-and-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Frustrations and Failure Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Frustrations and Failure Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-coordination-is-the-hardest-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Coordination Is the Hardest Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus-is-a-bad-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus Is a Bad Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subagent-quality-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subagent Quality Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-47-infinite-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The $47 Infinite Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sick-of-frameworks-camp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Sick of Frameworks" Camp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-kubernetes-for-agents-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Kubernetes for Agents Angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-just-use-a-single-prompt-debate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Just Use a Single Prompt" Debate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-tips-from-practitioners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Tips from Practitioners
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Tips from Practitioners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-surprises-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Surprises People
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-polythink-debate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PolyThink Debate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-and-governance-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety and Governance Concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bottom Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="community-insights-on-multi-agent-ai">Community Insights on Multi-Agent AI<a class="headerlink" href="#community-insights-on-multi-agent-ai" title="Permanent link">&para;</a></h1>
+<p>What developers actually think about multi-agent systems, drawn from Hacker News discussions, Reddit threads, and practitioner blog posts. The picture is messier than the marketing suggests.</p>
+<h2 id="the-hype-question">The Hype Question<a class="headerlink" href="#the-hype-question" title="Permanent link">&para;</a></h2>
+<p>The most direct thread --- "Ask HN: Do you think AI Agents are overhyped?" (20 points, 32 comments) --- reveals a community split between enthusiasm and deep skepticism. A recurring sentiment: agents are "overhyped for their capability" and "we have hit local optima as far as LLM as technology goes."</p>
+<p>One team that tried Computer Use Agents found them "Overhyped, Too slow, Too expensive" and noted they "contemplate their existence when confronting date pickers."</p>
+<p>The pragmatic middle ground, expressed by ToolJet's founder: agents are "overhyped right now" but useful when they configure pre-built components rather than generate raw code.</p>
+<div class="admonition note">
+<p class="admonition-title">The marketing agent verdict</p>
+<p>On using AI agents for marketing: "Agents can do a lot of work, but they don't automatically create a sensible operating system unless you already know what to ask for." (<a href="https://news.ycombinator.com/item?id=47222844">HN</a>)</p>
+</div>
+<h2 id="real-world-success-stories">Real-World Success Stories<a class="headerlink" href="#real-world-success-stories" title="Permanent link">&para;</a></h2>
+<h3 id="the-13-agent-prediction-market">The 13-Agent Prediction Market<a class="headerlink" href="#the-13-agent-prediction-market" title="Permanent link">&para;</a></h3>
+<p>One HN user (paifamily) runs a 13-agent system called PAI Family with specialised agents for research, finance, content, strategy, critique, and psychology. The agents "collaborate, argue, and occasionally bet against each other" through a prediction market. This is one of the more ambitious multi-agent deployments reported in the wild.</p>
+<h3 id="the-simulated-trading-desk">The Simulated Trading Desk<a class="headerlink" href="#the-simulated-trading-desk" title="Permanent link">&para;</a></h3>
+<p>User raffaeleg runs 6 agents on a simulated trading desk (Platypi), coordinating exclusively via email with no human intervention. They observed surprising emergent behaviours like "agents developing implicit trust hierarchies" and a risk manager that consistently blocks others. Their core finding: <strong>"hard specialization creates blind spots that are hard to catch in real time."</strong></p>
+<h3 id="the-multi-stage-development-pipeline">The Multi-Stage Development Pipeline<a class="headerlink" href="#the-multi-stage-development-pipeline" title="Permanent link">&para;</a></h3>
+<p>User mrothroc runs agents at each stage: spec → plan → design → code → review. Their key insight, which has been echoed widely:</p>
+<blockquote>
+<p>"The arrangement of the checks between agents matters more than which model you pick for any one step."</p>
+</blockquote>
+<p>Most failures were omissions caught by inter-stage gates --- the pipeline structure, not the model quality, was the primary driver of output quality.</p>
+<h3 id="the-sqlite-shard-pattern">The SQLite Shard Pattern<a class="headerlink" href="#the-sqlite-shard-pattern" title="Permanent link">&para;</a></h3>
+<p>User Horos runs a fully async pattern using SQLite shards in Go (~500 lines). The router dispatches calls via a SQLite routes table, allowing switching between local and remote execution by updating a single config row --- "zero code change, zero restart." They describe it as "bulletproof and very LLM friendly" and a good token saver.</p>
+<h2 id="common-frustrations-and-failure-modes">Common Frustrations and Failure Modes<a class="headerlink" href="#common-frustrations-and-failure-modes" title="Permanent link">&para;</a></h2>
+<h3 id="state-coordination-is-the-hardest-problem">State Coordination Is the Hardest Problem<a class="headerlink" href="#state-coordination-is-the-hardest-problem" title="Permanent link">&para;</a></h3>
+<p>User jovanaccount nails the most underappreciated challenge:</p>
+<blockquote>
+<p>Frameworks handle individual agent capabilities well but fail at preventing agents from "silently overwriting each other's work on shared state." ... A classic race condition where AI output "looks reasonable, so you don't notice it until production."</p>
+</blockquote>
+<p>This is the fundamental issue: multi-agent systems introduce concurrency problems, and LLM outputs are plausible enough to hide bugs.</p>
+<h3 id="consensus-is-a-bad-protocol">Consensus Is a Bad Protocol<a class="headerlink" href="#consensus-is-a-bad-protocol" title="Permanent link">&para;</a></h3>
+<p>User formreply identifies a spectacular failure mode: agents sharing a conversation thread "race to add the last word, produce verbose non-decisions." What works instead:</p>
+<blockquote>
+<p><strong>Role clarity + veto rights</strong> --- one agent can only block, another makes calls.</p>
+</blockquote>
+<p>They also advocate treating inbound events (emails, webhooks) as task boundaries for auditability rather than using always-on agents.</p>
+<h3 id="subagent-quality-degradation">Subagent Quality Degradation<a class="headerlink" href="#subagent-quality-degradation" title="Permanent link">&para;</a></h3>
+<p>User dhruvkar reports that "performance is degraded when using subagents --- scraping is less smart, content is worse written." This is consistent with Anthropic's finding that distributing work across agents introduces information loss at each handoff.</p>
+<h3 id="the-47-infinite-loop">The $47 Infinite Loop<a class="headerlink" href="#the-47-infinite-loop" title="Permanent link">&para;</a></h3>
+<p>From the Agent Firewall discussion: agents "stuck in an infinite loop arguing over JSON formatting" cost "$47 in API calls" overnight. This is a common enough failure mode that someone built a Go proxy specifically to kill LLM death spirals.</p>
+<div class="admonition warning">
+<p class="admonition-title">The telephone game</p>
+<p>Information degrades as it passes through agents. Anthropic addresses this by having subagents store work in external systems and "pass lightweight references back to the coordinator" rather than relaying full content through the chain.</p>
+</div>
+<h2 id="framework-preferences">Framework Preferences<a class="headerlink" href="#framework-preferences" title="Permanent link">&para;</a></h2>
+<h3 id="the-sick-of-frameworks-camp">The "Sick of Frameworks" Camp<a class="headerlink" href="#the-sick-of-frameworks-camp" title="Permanent link">&para;</a></h3>
+<p>The HN post "Sick of AI Agent Frameworks" (15 points, 7 comments) argues: "i can literally do everything what they offer spending a few hours with cursor, and better." This sentiment is common among experienced developers who find frameworks add abstraction without proportional value.</p>
+<h3 id="the-kubernetes-for-agents-angle">The Kubernetes for Agents Angle<a class="headerlink" href="#the-kubernetes-for-agents-angle" title="Permanent link">&para;</a></h3>
+<p>The highest-engagement framework discussion was Klaw.sh (60 points, 43 comments), which positions itself as "Kubernetes for AI agents" --- operating "one layer above" frameworks like CrewAI and LangGraph for fleet management. This suggests the community sees value in orchestration infrastructure even when skeptical of agent frameworks themselves.</p>
+<h3 id="deployment-gap">Deployment Gap<a class="headerlink" href="#deployment-gap" title="Permanent link">&para;</a></h3>
+<p>Several projects (Crewship, RunAgent, automcp, autoa2a) address the gap between local prototyping and production deployment. The pattern is clear: frameworks make it easy to prototype but hard to deploy. The community is building the missing middle.</p>
+<h2 id="the-just-use-a-single-prompt-debate">The "Just Use a Single Prompt" Debate<a class="headerlink" href="#the-just-use-a-single-prompt-debate" title="Permanent link">&para;</a></h2>
+<p>This is the sharpest division in the community. One camp says multi-agent is essential for complex tasks. The other says it is unnecessary complexity.</p>
+<p><strong>The multi-agent advocates argue:</strong></p>
+<ul>
+<li>Complex tasks genuinely benefit from division of labour</li>
+<li>Adversarial review catches things self-reflection misses</li>
+<li>Context isolation prevents pollution in long-running tasks</li>
+<li>The orchestrator-worker pattern mirrors how effective human teams work</li>
+</ul>
+<p><strong>The skeptics argue:</strong></p>
+<ul>
+<li>A well-crafted single prompt with retrieval handles most real tasks</li>
+<li>Multi-agent adds latency, cost, and failure modes</li>
+<li>Most "multi-agent" systems are really prompt chaining with extra abstraction</li>
+<li>The coordination overhead often outweighs the benefits</li>
+</ul>
+<p>The skeptics have the stronger empirical case for <em>most</em> tasks. Anthropic's own guide recommends starting with the simplest possible approach and only adding agents when measurably justified. The evidence supports multi-agent primarily for genuinely complex, open-ended work --- not for tasks where a single prompt plus tools would suffice.</p>
+<h2 id="practical-tips-from-practitioners">Practical Tips from Practitioners<a class="headerlink" href="#practical-tips-from-practitioners" title="Permanent link">&para;</a></h2>
+<h3 id="what-actually-works">What Actually Works<a class="headerlink" href="#what-actually-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Email/async messaging beats shared conversation threads</strong> for coordination and auditability (raffaeleg, formreply)</p>
+</li>
+<li>
+<p><strong>Specialisation with clear role boundaries</strong> outperforms consensus-based approaches (formreply)</p>
+</li>
+<li>
+<p><strong>Inter-agent gates and checks</strong> matter more than individual model choice (mrothroc)</p>
+</li>
+<li>
+<p><strong>JSON over markdown for structured state</strong> --- models are "less likely to inappropriately change or overwrite JSON files" (Anthropic)</p>
+</li>
+<li>
+<p><strong>One feature at a time</strong> for coding agents --- "critical to addressing the agent's tendency to do too much at once" (Anthropic)</p>
+</li>
+<li>
+<p><strong>Smoke tests before new work</strong> in every session --- if the app was left broken, "it would likely make the problem worse" to start a new feature on top of that (Anthropic)</p>
+</li>
+<li>
+<p><strong>Git commit frequently</strong> --- history lets agents "revert bad code changes and recover working states" (Anthropic)</p>
+</li>
+</ol>
+<h3 id="what-surprises-people">What Surprises People<a class="headerlink" href="#what-surprises-people" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Emergent trust hierarchies</strong> in multi-agent systems (raffaeleg)</li>
+<li><strong>Agents preferring SEO content farms</strong> over authoritative sources --- requires explicit guidance (Anthropic)</li>
+<li><strong>The last mile is most of the journey</strong> --- the gap between prototype and production is wider than expected (Anthropic)</li>
+<li><strong>Agents defaulting to overly specific queries</strong> that return few results --- prompting for broad-first searches helps (Anthropic)</li>
+<li>Letting agents improve their own tool descriptions yielded a <strong>40% decrease in task completion time</strong> (Anthropic)</li>
+</ul>
+<h2 id="the-polythink-debate">The PolyThink Debate<a class="headerlink" href="#the-polythink-debate" title="Permanent link">&para;</a></h2>
+<p>The PolyThink project --- a multi-model consensus system to reduce hallucinations --- illustrates the community's ambivalence. The creator claims hallucination overlap "never really happened even once" in testing. But user stereo raised the core concern: if multiple input AIs hallucinate or the consensus AI misunderstands, "you will still have confabulations in the output." The Swiss cheese model applies --- multiple layers help but do not guarantee correctness.</p>
+<h2 id="safety-and-governance-concerns">Safety and Governance Concerns<a class="headerlink" href="#safety-and-governance-concerns" title="Permanent link">&para;</a></h2>
+<p>The Thoughtworks Technology Radar flags "Toxic flow analysis for AI" as an assess-level technique, examining flow graphs of agentic systems to find unsafe data paths when "agents communicate with one another." They also warn against "Naive API-to-MCP conversion" --- directly exposing APIs to agents because "there's no reliable, deterministic way to prevent an autonomous AI agent from misusing such endpoints."</p>
+<p>Anthropic's research arm has published on:</p>
+<ul>
+<li><strong>Agentic misalignment</strong>: how LLMs could act as insider threats</li>
+<li><strong>SHADE-Arena</strong>: evaluating sabotage and monitoring in LLM agents</li>
+<li><strong>Alignment faking</strong>: models "selectively complying with training objectives while strategically preserving existing preferences"</li>
+</ul>
+<p>The academic community is also paying attention. The "Toward a Safe Internet of Agents" paper (Wibowo &amp; Polyzos, 2025) argues that "agentic safety is an architectural principle, not an add-on," requiring safety at three levels: single agent, multi-agent system, and interoperable multi-agent system.</p>
+<h2 id="the-bottom-line">The Bottom Line<a class="headerlink" href="#the-bottom-line" title="Permanent link">&para;</a></h2>
+<p>The community consensus, such as it is:</p>
+<ol>
+<li>Multi-agent systems <strong>work</strong> for genuinely complex, decomposable tasks</li>
+<li>For most tasks, they are <strong>overkill</strong> --- start with a single agent and scale up only when you can measure the improvement</li>
+<li>The <strong>coordination problem</strong> is harder than the individual agent problem</li>
+<li><strong>Frameworks are convenient but leaky</strong> --- understand what is underneath</li>
+<li><strong>Cost and observability</strong> are the practical blockers for production use</li>
+<li>The field is moving fast, but <strong>production-ready multi-agent is still early</strong> --- expect to build significant infrastructure around whatever framework you choose</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1189 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deep-dive research summaries on various topics">
+      
+      
+      
+      
+        <link rel="prev" href="../community/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sources - AI Research Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Research Notes" class="md-header__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Research Notes" class="md-nav__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Research Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Agent AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multi-Agent AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Insights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-documentation-and-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Official Documentation and Guides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Documentation and Guides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anthropic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-a2a-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google / A2A Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Context Protocol (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-autogen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft / AutoGen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-swarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI Swarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#industry-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thoughtworks-technology-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thoughtworks Technology Radar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Andrew Ng
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#academic-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Academic Papers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Papers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-surveys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Surveys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-research-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notable Research Papers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-safety-research-anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Safety Research (Anthropic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmarks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-discussions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Discussions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Discussions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hacker-news" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hacker News
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-documentation-and-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Official Documentation and Guides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Documentation and Guides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anthropic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-a2a-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google / A2A Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Context Protocol (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-autogen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft / AutoGen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-swarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI Swarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#industry-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thoughtworks-technology-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thoughtworks Technology Radar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Andrew Ng
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#academic-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Academic Papers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Papers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-surveys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Surveys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-research-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notable Research Papers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-safety-research-anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Safety Research (Anthropic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmarks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-discussions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Discussions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Discussions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hacker-news" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hacker News
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h1>
+<p>All references used in this research, organised by category.</p>
+<h2 id="official-documentation-and-guides">Official Documentation and Guides<a class="headerlink" href="#official-documentation-and-guides" title="Permanent link">&para;</a></h2>
+<h3 id="anthropic">Anthropic<a class="headerlink" href="#anthropic" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a> --- Anthropic's foundational guide to agentic patterns, the complexity spectrum from single prompts to autonomous agents, and when to use each pattern. By Erik Schluntz and Barry Zhang, December 2024.</li>
+<li><a href="https://www.anthropic.com/engineering/multi-agent-research-system">How We Built Our Multi-Agent Research System</a> --- Detailed writeup of Anthropic's orchestrator-worker research system, including what worked, what did not, and quantitative findings. June 2025.</li>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective Context Engineering for AI Agents</a> --- Context management techniques including compaction, structured note-taking, and sub-agent architectures. September 2025.</li>
+<li><a href="https://www.anthropic.com/engineering/writing-tools-for-agents">Writing Effective Tools for Agents</a> --- Five principles for tool design, including namespace clarity, token efficiency, and prompt-engineering tool descriptions. September 2025.</li>
+<li><a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">Effective Harnesses for Long-Running Agents</a> --- Two-part harness architecture (initialiser + coding agent) for multi-session agent work. November 2025.</li>
+<li><a href="https://www.anthropic.com/engineering/claude-code-sandboxing">Claude Code Sandboxing</a> --- Security model for agentic coding, filesystem and network isolation. October 2025.</li>
+<li><a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Harness Design for Long-Running Application Development</a> --- Structured feature lists, progress tracking, and incremental development patterns. March 2026.</li>
+<li><a href="https://code.claude.com/docs/en/sub-agents">Claude Code: Custom Subagents</a> --- Documentation for creating and configuring subagents in Claude Code with tool restrictions, model selection, and permission modes.</li>
+<li><a href="https://code.claude.com/docs/en/agent-teams">Claude Code: Agent Teams</a> --- Documentation for orchestrating multiple Claude Code instances with shared task lists, inter-agent messaging, and coordinated work.</li>
+<li><a href="https://code.claude.com/docs/en/overview">Claude Code Overview</a> --- Overview of Claude Code's capabilities including subagents and agent teams.</li>
+</ul>
+<h3 id="google-a2a-protocol">Google / A2A Protocol<a class="headerlink" href="#google-a2a-protocol" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://blog.google/technology/google-cloud/agent-to-agent-a2a-protocol/">A2A Protocol Announcement Blog Post</a> --- Google Cloud blog post announcing A2A with partner list and design principles. April 2025.</li>
+<li><a href="https://github.com/google/A2A">A2A GitHub Repository</a> --- Protocol specification, SDKs (Python, Go, JavaScript, Java, .NET), and samples. Apache 2.0 license under the Linux Foundation.</li>
+<li><a href="https://github.com/a2aproject/a2a-samples">A2A Samples Repository</a> --- Demonstration implementations of the A2A protocol.</li>
+</ul>
+<h3 id="model-context-protocol-mcp">Model Context Protocol (MCP)<a class="headerlink" href="#model-context-protocol-mcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/architecture">MCP Architecture Overview</a> --- Core architecture including client-server model, layers, primitives (tools, resources, prompts), and transport mechanisms.</li>
+<li><a href="https://modelcontextprotocol.io/specification/latest">MCP Specification</a> --- Full protocol specification. Current version: 2025-11-25.</li>
+<li><a href="https://www.anthropic.com/news/model-context-protocol">MCP Announcement</a> --- Original announcement of MCP as an open standard for connecting AI systems with data sources. November 2024.</li>
+</ul>
+<h3 id="microsoft-autogen">Microsoft / AutoGen<a class="headerlink" href="#microsoft-autogen" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://microsoft.github.io/autogen/stable/">AutoGen Documentation</a> --- Framework documentation covering AutoGen Studio, AgentChat, Core API, and Extensions.</li>
+<li><a href="https://microsoft.github.io/autogen/stable/core-user-guide/core-concepts.html">AutoGen Core Concepts</a> --- Actor model communication, distributed runtime, topic/subscription patterns, and design patterns (concurrent agents, sequential workflow, group chat, handoffs, debate, reflection).</li>
+</ul>
+<h3 id="crewai">CrewAI<a class="headerlink" href="#crewai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://docs.crewai.com/">CrewAI Documentation</a> --- Official documentation covering crews, agents, tasks, processes (sequential and hierarchical), memory, and execution methods.</li>
+</ul>
+<h3 id="openai-swarm">OpenAI Swarm<a class="headerlink" href="#openai-swarm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/openai/swarm">Swarm GitHub Repository</a> --- Educational framework for multi-agent orchestration (now deprecated in favour of OpenAI Agents SDK). Covers agents, handoffs, context variables, and streaming.</li>
+</ul>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/awslabs/agent-squad">Agent Squad (formerly Multi-Agent Orchestrator)</a> --- AWS Labs framework for classifier-based multi-agent routing. Available in Python and TypeScript.</li>
+</ul>
+<h3 id="mastra">Mastra<a class="headerlink" href="#mastra" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://mastra.ai/docs">Mastra Documentation</a> --- TypeScript-native AI agent framework with framework integrations.</li>
+</ul>
+<h2 id="industry-analysis">Industry Analysis<a class="headerlink" href="#industry-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="thoughtworks-technology-radar">Thoughtworks Technology Radar<a class="headerlink" href="#thoughtworks-technology-radar" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.thoughtworks.com/radar">Thoughtworks Technology Radar Vol. 33</a> --- Key agent-related entries:<ul>
+<li><strong>LangGraph</strong>: Adopt (Languages &amp; Frameworks)</li>
+<li><strong>NeMo Guardrails</strong>: Adopt (Tools)</li>
+<li><strong>Claude Code</strong>: Trial (Tools)</li>
+<li><strong>AGENTS.md</strong>: Trial (Techniques)</li>
+<li><strong>Context7</strong>: Trial (Tools)</li>
+<li><strong>Team of coding agents</strong>: Assess (Techniques)</li>
+<li><strong>Context engineering</strong>: Assess (Techniques)</li>
+<li><strong>MCP</strong>: Assess (Platforms)</li>
+<li><strong>A2A Protocol</strong>: Assess (Platforms)</li>
+<li><strong>Toxic flow analysis for AI</strong>: Assess (Techniques)</li>
+<li><strong>Naive API-to-MCP conversion</strong>: Hold (Techniques)</li>
+<li>Theme: "The Rise of Agents Elevated by MCP"</li>
+</ul>
+</li>
+</ul>
+<h3 id="andrew-ng">Andrew Ng<a class="headerlink" href="#andrew-ng" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/">Agentic Design Patterns</a> --- Andrew Ng's framework of four agentic patterns (reflection, tool use, planning, multi-agent collaboration) and HumanEval benchmark results showing GPT-3.5 with agent loop achieving 95.1%.</li>
+</ul>
+<h2 id="academic-papers">Academic Papers<a class="headerlink" href="#academic-papers" title="Permanent link">&para;</a></h2>
+<h3 id="major-surveys">Major Surveys<a class="headerlink" href="#major-surveys" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Guo et al. (2024)</strong> --- "Large Language Model based Multi-Agents: A Survey of Progress and Challenges." 802 citations. Covers agent profiling, communication, and capability growth. <a href="https://arxiv.org/search/?searchtype=all&amp;query=LLM+multi-agent+survey+Guo">arXiv:2401.????</a></li>
+<li><strong>Tran et al. (2025)</strong> --- "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." 371 citations. Five-dimension framework: actors, types, structures, strategies, coordination protocols. Applications in 5G/6G networks, Industry 5.0, question answering.</li>
+<li><strong>Yan et al. (2025)</strong> --- "Beyond Self-Talk: A Communication-Centric Survey of LLM-Based Multi-Agent Systems." 51 citations. Communication-focused framework covering system-level and internal communication.</li>
+<li><strong>Sarkar &amp; Sarkar (2025)</strong> --- "Survey of LLM Agent Communication with MCP: A Software Design Pattern Centric Review." 14 citations. Applies Mediator, Observer, Publish-Subscribe, and Broker patterns to MCP.</li>
+</ul>
+<h3 id="notable-research-papers">Notable Research Papers<a class="headerlink" href="#notable-research-papers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Liang et al. (2024)</strong> --- "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate." EMNLP 2024. Identifies the Degeneration-of-Thought problem and proposes the MAD framework. <a href="https://arxiv.org/abs/2305.19118">arXiv:2305.19118</a></li>
+<li><strong>Chowdhury et al. (2026)</strong> --- "PROClaim: Courtroom-Style Multi-Agent Debate with Progressive RAG." 81.7% accuracy outperforming standard debate by 10 points. <a href="https://arxiv.org/abs/2603.28488">arXiv:2603.28488</a></li>
+<li><strong>Shen et al. (2026)</strong> --- "Empirical Study of Multi-Agent Collaboration for Automated Research." Benchmarks single-agent vs subagent vs agent team paradigms under fixed compute. <a href="https://arxiv.org/abs/2603.29632">arXiv:2603.29632</a></li>
+<li><strong>Nguyen &amp; Pham (2026)</strong> --- "Toward Reliable Evaluation of LLM-Based Financial Multi-Agent Systems." Four-dimensional taxonomy and Coordination Primacy Hypothesis. <a href="https://arxiv.org/abs/2603.27539">arXiv:2603.27539</a></li>
+<li><strong>Chen et al. (2026)</strong> --- "The Five Ws of Multi-Agent Communication." TMLR 2026. Reviews communication across MARL, Emergent Language, and LLM-based paradigms. <a href="https://arxiv.org/abs/2602.11583">arXiv:2602.11583</a></li>
+<li><strong>Wibowo &amp; Polyzos (2025)</strong> --- "Toward a Safe Internet of Agents." Architectural framework for safety at single-agent, MAS, and interoperable MAS levels. <a href="https://arxiv.org/abs/2512.00520">arXiv:2512.00520</a></li>
+</ul>
+<h3 id="agent-safety-research-anthropic">Agent Safety Research (Anthropic)<a class="headerlink" href="#agent-safety-research-anthropic" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.anthropic.com/research/agentic-misalignment">Agentic Misalignment: How LLMs Could Be Insider Threats</a> --- June 2025</li>
+<li><a href="https://www.anthropic.com/research/shade-arena-sabotage-monitoring">SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents</a> --- June 2025</li>
+<li><a href="https://www.anthropic.com/research/measuring-agent-autonomy">Measuring AI Agent Autonomy in Practice</a> --- February 2026</li>
+<li><a href="https://www.anthropic.com/research/prompt-injection-defenses">Mitigating the Risk of Prompt Injections in Browser Use</a> --- November 2025</li>
+</ul>
+<h3 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>NARCBench</strong> --- Multi-agent collusion detection. <a href="https://arxiv.org/abs/2604.01151">arXiv:2604.01151</a></li>
+<li><strong>AgentSocialBench</strong> --- Privacy risk in multi-agent social networks. <a href="https://arxiv.org/abs/2604.01487">arXiv:2604.01487</a></li>
+<li><strong>MP-Bench</strong> --- Multi-perspective failure attribution. <a href="https://arxiv.org/abs/2603.25001">arXiv:2603.25001</a></li>
+<li><strong>SOC-bench</strong> --- Security operation capabilities of multi-agent systems. <a href="https://arxiv.org/abs/2603.28998">arXiv:2603.28998</a></li>
+<li><strong>SafeClaw-R</strong> --- Safety enforcement for multi-agent personal assistants. <a href="https://arxiv.org/abs/2603.28807">arXiv:2603.28807</a></li>
+</ul>
+<h3 id="microsoft-research">Microsoft Research<a class="headerlink" href="#microsoft-research" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/">Magentic-One</a> --- Hierarchical orchestration system built on AutoGen with Orchestrator directing four specialist agents via Task Ledger and Progress Ledger patterns.</li>
+</ul>
+<h2 id="community-discussions">Community Discussions<a class="headerlink" href="#community-discussions" title="Permanent link">&para;</a></h2>
+<h3 id="hacker-news">Hacker News<a class="headerlink" href="#hacker-news" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=47270020">Ask HN: How are you using multi-agent AI systems in your daily workflow?</a> --- 16 points, 16 comments. The PAI Family discussion with detailed practitioner experiences.</li>
+<li><a href="https://news.ycombinator.com/item?id=43714433">PolyThink: A Multi-Agent AI System to Eliminate Hallucinations</a> --- 9 points, 10 comments. Debate on multi-model consensus approaches.</li>
+<li><a href="https://news.ycombinator.com/item?id=47025478">Klaw.sh: Kubernetes for AI Agents</a> --- 60 points, 43 comments. Highest-engagement agent infrastructure discussion.</li>
+<li><a href="https://news.ycombinator.com/item?id=42691946">Sick of AI Agent Frameworks</a> --- 15 points, 7 comments. Framework fatigue sentiment.</li>
+<li><a href="https://news.ycombinator.com/item?id=40646631">Ask HN: Do you think AI Agents are overhyped?</a> --- 20 points, 32 comments. The definitive hype debate.</li>
+<li><a href="https://news.ycombinator.com/item?id=47308378">Agent Firewall: Go proxy to kill LLM death spirals</a> --- The $47 overnight loop story.</li>
+<li><a href="https://news.ycombinator.com/item?id=47526813">Orloj: Agent infrastructure as code</a> --- 20 points, 12 comments. YAML and GitOps for agents.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deep-dive research summaries on various topics">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../community/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Practical Guide - AI Research Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practical-guide-to-multi-agent-ai-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Research Notes" class="md-header__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practical Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Research Notes" class="md-nav__button md-logo" aria-label="AI Research Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Research Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Agent AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multi-Agent AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practical Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing a Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-no-framework-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "No Framework" Option
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-orchestrator-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Orchestrator-Workers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pipeline-sequential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pipeline / Sequential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-parallel-map-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Parallel / Map-Reduce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-debate-adversarial-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Debate / Adversarial Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reflection-self-critique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reflection / Self-Critique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegation-done-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Done Right
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging and Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-design-for-long-running-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harness Design for Long-Running Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-orchestrator-worker-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Orchestrator-Worker in Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-subagent-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code Subagent Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autogen-group-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoGen Group Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Insights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing a Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-no-framework-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "No Framework" Option
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-orchestrator-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Orchestrator-Workers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pipeline-sequential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pipeline / Sequential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-parallel-map-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Parallel / Map-Reduce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-debate-adversarial-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Debate / Adversarial Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reflection-self-critique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reflection / Self-Critique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegation-done-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Done Right
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging and Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-design-for-long-running-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harness Design for Long-Running Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-orchestrator-worker-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Orchestrator-Worker in Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-subagent-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code Subagent Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autogen-group-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoGen Group Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practical-guide-to-multi-agent-ai-systems">Practical Guide to Multi-Agent AI Systems<a class="headerlink" href="#practical-guide-to-multi-agent-ai-systems" title="Permanent link">&para;</a></h1>
+<p>This guide covers how to choose a framework, which patterns to use, and the hard-won lessons from practitioners who have built multi-agent systems in production.</p>
+<h2 id="choosing-a-framework">Choosing a Framework<a class="headerlink" href="#choosing-a-framework" title="Permanent link">&para;</a></h2>
+<p>The right choice depends on your language, your need for control, and whether you want a framework at all.</p>
+<h3 id="decision-matrix">Decision Matrix<a class="headerlink" href="#decision-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>If you need...</th>
+<th>Consider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fine-grained control over agent flow</td>
+<td><strong>LangGraph</strong> --- state graphs give you explicit control over transitions and conditional routing</td>
+</tr>
+<tr>
+<td>Quick prototyping with role-based agents</td>
+<td><strong>CrewAI</strong> --- the crew/agent/task metaphor is intuitive and gets you running fast</td>
+</tr>
+<tr>
+<td>Distributed, event-driven architecture</td>
+<td><strong>AutoGen Core</strong> --- Actor model with pub/sub, gRPC runtime for cross-language agents</td>
+</tr>
+<tr>
+<td>Minimal abstraction, just LLM + tools</td>
+<td><strong>Direct API calls</strong> --- Anthropic recommends starting here before reaching for frameworks</td>
+</tr>
+<tr>
+<td>TypeScript-native development</td>
+<td><strong>Mastra</strong> --- built for TS with framework integrations (Next.js, Astro, SvelteKit)</td>
+</tr>
+<tr>
+<td>AWS ecosystem integration</td>
+<td><strong>Agent Squad</strong> --- classifier-based routing with Bedrock, Lex, and other AWS services</td>
+</tr>
+<tr>
+<td>Production coding agents</td>
+<td><strong>Claude Code</strong> --- subagents and agent teams with built-in context management</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Framework caution</p>
+<p>Anthropic's "Building Effective Agents" guide warns that frameworks "often create extra layers of abstraction that can obscure the underlying prompts." They advise starting with direct LLM API calls, since many patterns need only a few lines of code. When using frameworks, understanding the underlying mechanics is essential --- "incorrect assumptions about what's under the hood are a common source of customer error."</p>
+</div>
+<h3 id="the-no-framework-option">The "No Framework" Option<a class="headerlink" href="#the-no-framework-option" title="Permanent link">&para;</a></h3>
+<p>Many experienced practitioners skip frameworks entirely. The Hacker News post "Sick of AI Agent Frameworks" captured a common sentiment: "i can literally do everything what they offer spending a few hours with cursor, and better."</p>
+<p>A minimal agent loop is just:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">has_tool_calls</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">results</span> <span class="o">=</span> <span class="n">execute_tools</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">messages</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<p>The value of frameworks comes from handling the edges: state persistence, error recovery, distributed execution, and observability. If you do not need those, direct API calls are simpler and more transparent.</p>
+<h2 id="pattern-catalogue">Pattern Catalogue<a class="headerlink" href="#pattern-catalogue" title="Permanent link">&para;</a></h2>
+<h3 id="1-orchestrator-workers">1. Orchestrator-Workers<a class="headerlink" href="#1-orchestrator-workers" title="Permanent link">&para;</a></h3>
+<p>A lead agent breaks down a task, delegates to specialist workers, and synthesises their results. This is the most common production pattern.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Orchestrator receives the task and plans decomposition</li>
+<li>Spawns worker agents with specific objectives</li>
+<li>Workers execute independently and return results</li>
+<li>Orchestrator synthesises and optionally iterates</li>
+</ol>
+<p><strong>Example: Claude Code's architecture</strong></p>
+<p>Claude Code uses this pattern with a coordinator dispatching to specialist subagents:</p>
+<ul>
+<li><strong>Explore</strong> subagent (Haiku model): read-only codebase exploration</li>
+<li><strong>Plan</strong> subagent: research for planning, no write access</li>
+<li><strong>General-purpose</strong> subagent: complex multi-step tasks with full tool access</li>
+</ul>
+<p>Each subagent runs in its own context window. The coordinator gets back a condensed summary (typically 1,000-2,000 tokens) even if the subagent used tens of thousands of tokens exploring.</p>
+<p><strong>Example: Anthropic's multi-agent research system</strong></p>
+<p>A LeadResearcher (Claude Opus 4) spawns multiple research subagents (Claude Sonnet 4) in parallel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>LeadResearcher → [Subagent A: Topic 1] → findings
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                 [Subagent B: Topic 2] → findings  → Synthesise → CitationAgent → Report
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                 [Subagent C: Topic 3] → findings
+</code></pre></div>
+<p>Key findings from this system:</p>
+<ul>
+<li>Outperformed single-agent Claude Opus 4 by <strong>90.2%</strong> on internal evals</li>
+<li>Parallel tool calling (3-5 subagents, each using 3+ tools simultaneously) "cut research time by up to 90%"</li>
+<li>Agents use ~4x more tokens than chat; multi-agent systems use ~15x</li>
+</ul>
+<p><strong>When to use:</strong> Complex tasks where subtasks cannot be predicted in advance. Coding tools making multi-file changes, research requiring dynamic exploration.</p>
+<h3 id="2-pipeline-sequential">2. Pipeline / Sequential<a class="headerlink" href="#2-pipeline-sequential" title="Permanent link">&para;</a></h3>
+<p>Agents process work in a fixed order. Each stage's output becomes the next stage's input.</p>
+<p><strong>How it works:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Input → Agent A (spec) → Agent B (plan) → Agent C (code) → Agent D (review) → Output
+</code></pre></div>
+<p>Optional "gates" between stages validate output before passing it forward.</p>
+<p><strong>Example: Software development pipeline</strong></p>
+<p>One HN practitioner runs agents at each stage: spec → plan → design → code → review. Their key insight: "the arrangement of the checks between agents matters more than which model you pick for any one step."</p>
+<p><strong>When to use:</strong> Tasks that decompose cleanly into fixed, sequential subtasks. The tradeoff is higher latency for improved accuracy, since each call handles a simpler task.</p>
+<h3 id="3-parallel-map-reduce">3. Parallel / Map-Reduce<a class="headerlink" href="#3-parallel-map-reduce" title="Permanent link">&para;</a></h3>
+<p>Multiple agents explore simultaneously, with results aggregated by a synthesiser.</p>
+<p><strong>Two variants:</strong></p>
+<ul>
+<li><strong>Sectioning</strong>: Independent subtasks executed simultaneously (e.g., reviewing security, performance, and test coverage in parallel)</li>
+<li><strong>Voting</strong>: Running the same task multiple times for diverse outputs (e.g., multiple prompts independently reviewing code for vulnerabilities)</li>
+</ul>
+<p><strong>Example: Parallel code review with agent teams</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Lead → [Reviewer A: security] → findings
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>       [Reviewer B: performance] → findings  → Lead synthesises
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>       [Reviewer C: test coverage] → findings
+</code></pre></div>
+<p><strong>When to use:</strong> When subtasks are independent and speed matters. LLMs "generally perform better when each consideration is handled by a separate LLM call" (Anthropic).</p>
+<h3 id="4-debate-adversarial-review">4. Debate / Adversarial Review<a class="headerlink" href="#4-debate-adversarial-review" title="Permanent link">&para;</a></h3>
+<p>Agents argue opposing positions while a judge evaluates, encouraging divergent thinking.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Multiple agents independently analyse the same problem</li>
+<li>Agents challenge each other's conclusions</li>
+<li>A judge evaluates arguments and reaches a final decision</li>
+</ol>
+<p><strong>Research finding:</strong> The Multi-Agent Debate (MAD) framework found that once an LLM becomes confident in a solution, "it is unable to generate novel thoughts later through reflection even if its initial stance is incorrect." Adversarial debate breaks this pattern. PROClaim's courtroom-style debate achieved 81.7% accuracy on claim verification, outperforming standard multi-agent debate by 10 percentage points.</p>
+<p><strong>When to use:</strong> Problems where confirmation bias is a risk, such as claim verification, security auditing, or architecture decisions.</p>
+<h3 id="5-reflection-self-critique">5. Reflection / Self-Critique<a class="headerlink" href="#5-reflection-self-critique" title="Permanent link">&para;</a></h3>
+<p>One agent generates output; another evaluates it and provides feedback in a loop.</p>
+<p><strong>How it works:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Generator → Output → Evaluator → Feedback → Generator → ... → Final Output
+</code></pre></div>
+<p>This is Andrew Ng's "reflection" pattern. His team showed GPT-3.5 with an iterative agent loop achieved <strong>95.1%</strong> on HumanEval, compared to 48.1% zero-shot.</p>
+<p><strong>When to use:</strong> When LLM responses demonstrably improve with articulated feedback, and the LLM can replicate that evaluative role. Literary translation, complex code generation, research requiring iterative refinement.</p>
+<h3 id="6-routing">6. Routing<a class="headerlink" href="#6-routing" title="Permanent link">&para;</a></h3>
+<p>A classifier examines input and directs it to a specialised handler.</p>
+<p><strong>How it works:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Input → Router → [Handler A: billing questions]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                 [Handler B: technical support]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                 [Handler C: general enquiries]
+</code></pre></div>
+<p><strong>Example: Agent Squad (AWS)</strong></p>
+<p>Uses a classifier that considers both agent descriptions and conversation history to route each request to the best-fit agent. This enables context-aware routing across multiple agent types.</p>
+<p><strong>When to use:</strong> Complex tasks with distinct categories that benefit from separate handling. Customer service triage, model selection (simple queries to cheaper models, complex ones to capable models).</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="design-principles">Design Principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Anthropic's three principles</p>
+<ol>
+<li><strong>Simplicity</strong> --- keep agent design minimal</li>
+<li><strong>Transparency</strong> --- explicitly surface the agent's planning steps</li>
+<li><strong>ACI quality</strong> --- invest heavily in tool documentation and testing</li>
+</ol>
+</div>
+<h3 id="delegation-done-right">Delegation Done Right<a class="headerlink" href="#delegation-done-right" title="Permanent link">&para;</a></h3>
+<p>From Anthropic's multi-agent research system, vague delegation is a primary failure mode. "Research the semiconductor shortage" led to one subagent exploring the 2021 chip crisis while two others duplicated work on 2025 supply chains.</p>
+<p>Instead, provide each subagent with:</p>
+<ul>
+<li>A specific objective</li>
+<li>Expected output format</li>
+<li>Tool guidance</li>
+<li>Clear task boundaries</li>
+</ul>
+<h3 id="context-management">Context Management<a class="headerlink" href="#context-management" title="Permanent link">&para;</a></h3>
+<p>Context is a finite, precious resource. Key techniques for long-running multi-agent work:</p>
+<p><strong>Compaction</strong>: Summarise conversations nearing the window limit. Claude Code preserves architectural decisions and unresolved bugs while discarding redundant outputs, then continues with compressed context plus the five most recent files.</p>
+<p><strong>Structured note-taking</strong>: Agents persist notes outside the context window and pull them back in later. The Claude Plays Pokemon example maintained objective tallies across thousands of steps, surviving context resets by reading its own notes.</p>
+<p><strong>Sub-agent isolation</strong>: Each subagent works in a clean context window and returns only a condensed summary. This is the most effective technique for preventing context pollution in multi-agent systems.</p>
+<div class="admonition info">
+<p class="admonition-title">When to use which</p>
+<ul>
+<li><strong>Compaction</strong> → extensive back-and-forth conversations</li>
+<li><strong>Note-taking</strong> → iterative development with clear milestones</li>
+<li><strong>Multi-agent</strong> → complex research requiring parallel exploration</li>
+</ul>
+</div>
+<h3 id="tool-engineering">Tool Engineering<a class="headerlink" href="#tool-engineering" title="Permanent link">&para;</a></h3>
+<p>Anthropic reports spending "more time optimizing our tools than the overall prompt" for their SWE-bench agent. Key recommendations:</p>
+<ul>
+<li>Choose formats that minimise cognitive overhead (avoid diffs requiring line counts; prefer markdown over JSON for code)</li>
+<li>Apply poka-yoke (error-proofing) principles --- they changed a file-editing tool from relative to absolute filepaths after discovering the model made errors when the working directory shifted</li>
+<li>Write tool descriptions as you would "a great docstring for a junior developer on your team"</li>
+<li>Consolidate frequently chained operations: instead of <code>list_users</code> + <code>list_events</code> + <code>create_event</code>, build a <code>schedule_event</code> tool</li>
+</ul>
+<h3 id="cost-management">Cost Management<a class="headerlink" href="#cost-management" title="Permanent link">&para;</a></h3>
+<p>Multi-agent systems are expensive. Some numbers:</p>
+<ul>
+<li>Single-agent chat: baseline token cost</li>
+<li>Single agent with tools: ~4x chat</li>
+<li>Multi-agent system: ~15x chat</li>
+<li>Token usage explains ~80% of performance variance on Anthropic's BrowseComp benchmark</li>
+</ul>
+<p><strong>Strategies for controlling costs:</strong></p>
+<ul>
+<li>Route simple queries to cheaper models (Claude Haiku for exploration, Sonnet for implementation)</li>
+<li>Set maximum iteration limits on agent loops</li>
+<li>Use subagent isolation so exploration tokens do not pollute the main context</li>
+<li>Implement the Agent Firewall pattern --- a proxy that kills runaway agent loops (one practitioner lost "$47 in API calls" overnight to agents "stuck in an infinite loop arguing over JSON formatting")</li>
+</ul>
+<h3 id="debugging-and-observability">Debugging and Observability<a class="headerlink" href="#debugging-and-observability" title="Permanent link">&para;</a></h3>
+<p>Multi-agent systems are hard to debug because errors compound. "One step failing can cause agents to explore entirely different trajectories" (Anthropic).</p>
+<p><strong>Practical approaches:</strong></p>
+<ul>
+<li><strong>Full production tracing</strong>: Anthropic uses tracing for debugging without monitoring conversation contents</li>
+<li><strong>Rainbow deployments</strong>: Avoid disrupting running agents during updates</li>
+<li><strong>Build for resumption</strong>: Systems that can resume from failure points rather than restarting</li>
+<li><strong>Let agents know when tools fail</strong> so they can adapt rather than silently retrying</li>
+<li><strong>Start with ~20 test queries</strong> for evaluations --- early changes have dramatic effects</li>
+<li><strong>Read agent reasoning and raw transcripts carefully</strong>: "what agents omit in their feedback and responses can often be more important than what they include"</li>
+</ul>
+<h3 id="harness-design-for-long-running-agents">Harness Design for Long-Running Agents<a class="headerlink" href="#harness-design-for-long-running-agents" title="Permanent link">&para;</a></h3>
+<p>For agents working across multiple sessions, Anthropic recommends a two-part harness:</p>
+<ol>
+<li><strong>Initialiser agent</strong> (first session): Creates a structured feature list (JSON, not markdown --- models are "less likely to inappropriately change or overwrite JSON files"), an <code>init.sh</code> script, and a progress tracking file</li>
+<li><strong>Coding agent</strong> (every subsequent session): Reads git logs and progress files, picks the highest-priority incomplete feature, runs smoke tests before touching anything, works on <em>one feature at a time</em>, and ends with a descriptive commit</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Two failure modes to watch for</p>
+<ol>
+<li><strong>One-shotting</strong>: The agent attempts everything at once, runs out of context, and leaves half-finished work</li>
+<li><strong>Premature completion</strong>: "A later agent instance would look around, see that progress had been made, and declare the job done"</li>
+</ol>
+</div>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">&para;</a></h2>
+<h3 id="minimal-orchestrator-worker-in-python">Minimal Orchestrator-Worker in Python<a class="headerlink" href="#minimal-orchestrator-worker-in-python" title="Permanent link">&para;</a></h3>
+<p>Using the Anthropic API directly (no framework):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">anthropic</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">anthropic</span><span class="o">.</span><span class="n">Anthropic</span><span class="p">()</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_subagent</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tools</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a focused subagent and return its summary.&quot;&quot;&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">task</span><span class="p">}]</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="n">model</span><span class="o">=</span><span class="s2">&quot;claude-sonnet-4-6&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>            <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="c1"># Process tool calls</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">stop_reason</span> <span class="o">==</span> <span class="s2">&quot;tool_use&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            <span class="n">tool_results</span> <span class="o">=</span> <span class="n">execute_tools</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>            <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">})</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">tool_results</span><span class="p">})</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>            <span class="c1"># Extract final text response</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">orchestrate</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Orchestrator that decomposes and delegates.&quot;&quot;&quot;</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="c1"># Step 1: Plan decomposition</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    <span class="n">plan</span> <span class="o">=</span> <span class="n">run_subagent</span><span class="p">(</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="sa">f</span><span class="s2">&quot;Break this into 2-4 independent research subtasks: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>        <span class="n">tools</span><span class="o">=</span><span class="p">[],</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="p">)</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="c1"># Step 2: Run workers in parallel (simplified as sequential here)</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>    <span class="n">subtasks</span> <span class="o">=</span> <span class="n">parse_subtasks</span><span class="p">(</span><span class="n">plan</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">run_subagent</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="n">research_tools</span><span class="p">)</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">subtasks</span><span class="p">]</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>    <span class="c1"># Step 3: Synthesise</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>    <span class="n">synthesis_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Synthesise these findings:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>    <span class="k">return</span> <span class="n">run_subagent</span><span class="p">(</span><span class="n">synthesis_prompt</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="p">[])</span>
+</code></pre></div>
+<h3 id="crewai-example">CrewAI Example<a class="headerlink" href="#crewai-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">crewai</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Task</span><span class="p">,</span> <span class="n">Crew</span><span class="p">,</span> <span class="n">Process</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">researcher</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Senior Researcher&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">goal</span><span class="o">=</span><span class="s2">&quot;Find comprehensive information on the topic&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">backstory</span><span class="o">=</span><span class="s2">&quot;Expert at finding and synthesising information&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">search_tool</span><span class="p">,</span> <span class="n">web_scraper</span><span class="p">],</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">writer</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Technical Writer&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">goal</span><span class="o">=</span><span class="s2">&quot;Write clear, accurate summaries&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">backstory</span><span class="o">=</span><span class="s2">&quot;Experienced at distilling complex topics&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">research_task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Research </span><span class="si">{topic}</span><span class="s2"> thoroughly&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">researcher</span><span class="p">,</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;Structured research notes with sources&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="p">)</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">writing_task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Write a summary based on the research&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">writer</span><span class="p">,</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;A clear 500-word summary&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">)</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="n">crew</span> <span class="o">=</span> <span class="n">Crew</span><span class="p">(</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>    <span class="n">agents</span><span class="o">=</span><span class="p">[</span><span class="n">researcher</span><span class="p">,</span> <span class="n">writer</span><span class="p">],</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="n">tasks</span><span class="o">=</span><span class="p">[</span><span class="n">research_task</span><span class="p">,</span> <span class="n">writing_task</span><span class="p">],</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="n">process</span><span class="o">=</span><span class="n">Process</span><span class="o">.</span><span class="n">sequential</span><span class="p">,</span>  <span class="c1"># or Process.hierarchical</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="p">)</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="n">result</span> <span class="o">=</span> <span class="n">crew</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;multi-agent AI systems&quot;</span><span class="p">})</span>
+</code></pre></div>
+<h3 id="claude-code-subagent-definition">Claude Code Subagent Definition<a class="headerlink" href="#claude-code-subagent-definition" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>---
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>name: researcher
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>description: Research specialist for exploring topics. Use proactively for research tasks.
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>tools: Read, Grep, Glob, Bash
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gu">model: haiku</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="gu">---</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>You are a research specialist. When invoked:
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">1.</span> Understand the research question
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">2.</span> Search broadly first, then narrow to authoritative sources
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">3.</span> Return structured findings with source references
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>Prefer authoritative sources over SEO-optimised content farms.
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Return concise, factual summaries --- not exhaustive dumps.
+</code></pre></div>
+<h3 id="autogen-group-chat">AutoGen Group Chat<a class="headerlink" href="#autogen-group-chat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">autogen_agentchat.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">AssistantAgent</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">autogen_agentchat.teams</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoundRobinGroupChat</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">autogen_ext.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIChatCompletionClient</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">OpenAIChatCompletionClient</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">researcher</span> <span class="o">=</span> <span class="n">AssistantAgent</span><span class="p">(</span><span class="s2">&quot;researcher&quot;</span><span class="p">,</span> <span class="n">model_client</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">system_message</span><span class="o">=</span><span class="s2">&quot;You research topics thoroughly.&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">critic</span> <span class="o">=</span> <span class="n">AssistantAgent</span><span class="p">(</span><span class="s2">&quot;critic&quot;</span><span class="p">,</span> <span class="n">model_client</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">system_message</span><span class="o">=</span><span class="s2">&quot;You critically evaluate research for gaps and errors.&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">writer</span> <span class="o">=</span> <span class="n">AssistantAgent</span><span class="p">(</span><span class="s2">&quot;writer&quot;</span><span class="p">,</span> <span class="n">model_client</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">system_message</span><span class="o">=</span><span class="s2">&quot;You write clear summaries from reviewed research.&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">team</span> <span class="o">=</span> <span class="n">RoundRobinGroupChat</span><span class="p">([</span><span class="n">researcher</span><span class="p">,</span> <span class="n">critic</span><span class="p">,</span> <span class="n">writer</span><span class="p">],</span> <span class="n">max_turns</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">team</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s2">&quot;Analyse the state of multi-agent AI systems&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
